@@ -1,0 +1,11 @@
+[
+  "tests/test_job_store.py::test_job_store_get_not_found",
+  "tests/test_job_store.py::test_job_store_save_and_get",
+  "tests/test_result_builder.py::test_build_failure_result",
+  "tests/test_result_builder.py::test_build_success_result",
+  "tests/test_validator.py::test_validator_empty_path",
+  "tests/test_validator.py::test_validator_nonexistent_path",
+  "tests/test_validator.py::test_validator_unsupported_language",
+  "tests/test_verification_api.py::test_health_check",
+  "tests/test_verification_api.py::test_verification_status_not_found"
+]

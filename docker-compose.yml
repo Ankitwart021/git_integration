@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  sonarqube-1:
+    image: sonarqube:26.3.0.120487-community
+    container_name: sq-node-1
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    ports:
+      - "9001:9000"
+    networks:
+      - vs-net
+    volumes:
+      - sq1_data:/opt/sonarqube/data
+      - sq1_extensions:/opt/sonarqube/extensions
+
+networks:
+  vs-net:
+
+volumes:
+  sq1_data:
+  sq1_extensions:

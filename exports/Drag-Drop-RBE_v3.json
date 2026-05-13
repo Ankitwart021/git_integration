@@ -1,0 +1,3183 @@
+{
+  "verification_id": "57189743-a12a-432f-a4c7-5ed727a7aa83",
+  "project_name": "Drag-Drop RBE",
+  "summary": {
+    "bugs": 17,
+    "vulnerabilities": 0,
+    "code_smells": 638,
+    "security_hotspots": 2
+  },
+  "bugs_reliability": [
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Consider using \"forEach\" instead of \"map\" as its return value is not being used here.",
+      "file_path": "vs-drag-drop-rbe:models/RASPUIPage.tsx",
+      "line_number": 58
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:models/CardStyle.tsx",
+      "line_number": 49
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:models/CardStyle.tsx",
+      "line_number": 59
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:models/TableStyle.tsx",
+      "line_number": 77
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:models/TableStyle.tsx",
+      "line_number": 88
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/components/layout/Sidebar.tsx",
+      "line_number": 84
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Do not use \"Error\" to declare a variable - use another name.",
+      "file_path": "vs-drag-drop-rbe:repository/WorkflowNodeRepository.ts",
+      "line_number": 8
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Do not use \"Error\" to declare a variable - use another name.",
+      "file_path": "vs-drag-drop-rbe:repository/WorkflowNodeRepository.ts",
+      "line_number": 19
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Do not use \"Error\" to declare a variable - use another name.",
+      "file_path": "vs-drag-drop-rbe:repository/WorkflowNodeRepository.ts",
+      "line_number": 30
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx",
+      "line_number": 281
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx",
+      "line_number": 302
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx",
+      "line_number": 344
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx",
+      "line_number": 363
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx",
+      "line_number": 304
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx",
+      "line_number": 305
+    },
+    {
+      "severity": "MINOR",
+      "issue_detail": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/components/ToastContainer.tsx",
+      "line_number": 16
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Remove this conditional structure or edit its code blocks so that they're not all the same.",
+      "file_path": "vs-drag-drop-rbe:models/Button.tsx",
+      "line_number": 194
+    }
+  ],
+  "security_vulnerabilities": [
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    },
+    {
+      "severity": "MAJOR",
+      "issue_detail": "Make sure this dynamically formatted template is safe here.",
+      "file_path": "vs-drag-drop-rbe:server.ts",
+      "line_number": null
+    }
+  ],
+  "top_maintainability_issues": [
+    {
+      "rank": 1,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this code to not nest functions more than 4 levels deep.",
+      "recurrence": 12,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          676,
+          685,
+          698
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/ViewRolePage.tsx": [
+          69,
+          73,
+          300,
+          347
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/ViewRoleResourceMappingPage.tsx": [
+          81,
+          84,
+          87,
+          90,
+          93
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.",
+      "recurrence": 3,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          264
+        ],
+        "vs-drag-drop-rbe:utils/utils.tsx": [
+          18
+        ],
+        "vs-drag-drop-rbe:utils/file.ts": [
+          77
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 42 to the 15 allowed.",
+      "recurrence": 3,
+      "locations": {
+        "vs-drag-drop-rbe:models/ElementFactory.ts": [
+          48
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx": [
+          87
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/AddRolePage.tsx": [
+          29
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "severity": "CRITICAL",
+      "issue_detail": "A constructor name should not start with a lowercase letter.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/FlexContainer.tsx": [
+          32
+        ],
+        "vs-drag-drop-rbe:models/PromoFlightNavCode.tsx": [
+          28
+        ]
+      }
+    },
+    {
+      "rank": 5,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:utils/html.ts": [
+          222,
+          441
+        ]
+      }
+    },
+    {
+      "rank": 6,
+      "severity": "CRITICAL",
+      "issue_detail": "Unexpected var, use let or const instead.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          444
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/Table/ApiExample.jsx": [
+          27
+        ]
+      }
+    },
+    {
+      "rank": 7,
+      "severity": "CRITICAL",
+      "issue_detail": "Move this \"if\" to a new line or add the missing \"else\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          761
+        ]
+      }
+    },
+    {
+      "rank": 8,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          691
+        ]
+      }
+    },
+    {
+      "rank": 9,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/importApp.ts": [
+          67
+        ]
+      }
+    },
+    {
+      "rank": 10,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 28 to the 15 allowed.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/ElementFactory.ts": [
+          329
+        ]
+      }
+    },
+    {
+      "rank": 11,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 29 to the 15 allowed.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          896
+        ]
+      }
+    },
+    {
+      "rank": 12,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          529
+        ]
+      }
+    },
+    {
+      "rank": 13,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 37 to the 15 allowed.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/ElementFactory.ts": [
+          191
+        ]
+      }
+    },
+    {
+      "rank": 14,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 55 to the 15 allowed.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/authApis.tsx": [
+          93
+        ]
+      }
+    },
+    {
+      "rank": 15,
+      "severity": "CRITICAL",
+      "issue_detail": "Refactor this function to reduce its Cognitive Complexity from 88 to the 15 allowed.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          343
+        ]
+      }
+    },
+    {
+      "rank": 16,
+      "severity": "CRITICAL",
+      "issue_detail": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          564
+        ]
+      }
+    },
+    {
+      "rank": 17,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this commented out code.",
+      "recurrence": 132,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          127,
+          129,
+          132,
+          505,
+          551,
+          554
+        ],
+        "vs-drag-drop-rbe:repository/PageRepository.ts": [
+          72
+        ],
+        "vs-drag-drop-rbe:routes/Enum.ts": [
+          74
+        ],
+        "vs-drag-drop-rbe:routes/pages.ts": [
+          80,
+          204
+        ],
+        "vs-drag-drop-rbe:routes/exportApp.ts": [
+          60,
+          64,
+          99,
+          112,
+          138
+        ],
+        "vs-drag-drop-rbe:routes/importApp.ts": [
+          164,
+          284
+        ],
+        "vs-drag-drop-rbe:models/RASPUIApplication.tsx": [
+          2
+        ],
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          132,
+          144,
+          148,
+          156,
+          708,
+          716,
+          718,
+          747,
+          752,
+          788
+        ],
+        "vs-drag-drop-rbe:models/Audio.tsx": [
+          10
+        ],
+        "vs-drag-drop-rbe:models/Range.tsx": [
+          6
+        ],
+        "vs-drag-drop-rbe:models/Video.tsx": [
+          87
+        ],
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          2,
+          19,
+          92,
+          112,
+          120,
+          128,
+          135,
+          142,
+          146,
+          149,
+          185,
+          207,
+          227,
+          251,
+          279,
+          322,
+          335,
+          367,
+          409,
+          442
+        ],
+        "vs-drag-drop-rbe:models/ReadResource.tsx": [
+          25,
+          31,
+          183,
+          210
+        ],
+        "vs-drag-drop-rbe:models/ElementFactory.ts": [
+          1,
+          58,
+          159,
+          301
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          40,
+          203
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          22,
+          235
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/useStore/workflowStore.tsx": [
+          3
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx": [
+          37
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/AppContent.tsx": [
+          20
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.module.css": [
+          325,
+          329
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/ViewRolePage.module.css": [
+          305
+        ],
+        "vs-drag-drop-rbe:utils/file.ts": [
+          132
+        ],
+        "vs-drag-drop-rbe:api/index.ts": [
+          13
+        ],
+        "vs-drag-drop-rbe:config/apiConfig.ts": [
+          20
+        ],
+        "vs-drag-drop-rbe:models/CardStyle.tsx": [
+          4
+        ],
+        "vs-drag-drop-rbe:models/Collection.tsx": [
+          5,
+          10
+        ],
+        "vs-drag-drop-rbe:models/TableStyle.tsx": [
+          3,
+          8
+        ],
+        "vs-drag-drop-rbe:services/GenerateBackend.ts": [
+          110
+        ],
+        "vs-drag-drop-rbe:store/useResourceStore.ts": [
+          43,
+          60,
+          81,
+          89,
+          98
+        ],
+        "vs-drag-drop-rbe:utils/zipanddownload.ts": [
+          20,
+          42
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/meta.ts": [
+          49
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/backend.tsx": [
+          2,
+          101
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/resources.ts": [
+          19,
+          27,
+          34,
+          38,
+          43,
+          46,
+          51,
+          55,
+          108,
+          116
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login.tsx": [
+          1,
+          29,
+          46,
+          67,
+          78,
+          83,
+          85,
+          92,
+          109
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Registration/Registration.tsx": [
+          1
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/customComponents.ts": [
+          2
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/hooks/useMetaData.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:models/Button.tsx": [
+          1,
+          8,
+          199
+        ],
+        "vs-drag-drop-rbe:models/InputCalendar.tsx": [
+          25
+        ],
+        "vs-drag-drop-rbe:models/Card.tsx": [
+          18
+        ],
+        "vs-drag-drop-rbe:models/Resources.tsx": [
+          110
+        ],
+        "vs-drag-drop-rbe:models/Container.tsx": [
+          1
+        ],
+        "vs-drag-drop-rbe:models/UIElement.ts": [
+          2,
+          6
+        ],
+        "vs-drag-drop-rbe:models/Checkbox.tsx": [
+          1
+        ],
+        "vs-drag-drop-rbe:models/DropDown.tsx": [
+          1,
+          113
+        ],
+        "vs-drag-drop-rbe:models/Input.tsx": [
+          4,
+          15
+        ],
+        "vs-drag-drop-rbe:models/PageUIStructure.tsx": [
+          17
+        ],
+        "vs-drag-drop-rbe:models/UserInfo.tsx": [
+          20,
+          32
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/Table/ApiExample.jsx": [
+          17
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login1.tsx": [
+          3
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login2.tsx": [
+          3
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login3.tsx": [
+          3
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/context/LoginContext.tsx": [
+          9
+        ]
+      }
+    },
+    {
+      "rank": 18,
+      "severity": "MAJOR",
+      "issue_detail": "Prefer using an optional chain expression instead, as it's more concise and easier to read.",
+      "recurrence": 32,
+      "locations": {
+        "vs-drag-drop-rbe:repository/UserKeycloakRepository.ts": [
+          12
+        ],
+        "vs-drag-drop-rbe:routes/importApp.ts": [
+          94
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          75
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Dashboard.tsx": [
+          36
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Registration/UsersPage.tsx": [
+          26,
+          27
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/ViewRoleResourceMappingPage.tsx": [
+          49
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/UsersPage.tsx": [
+          26,
+          27
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/ViewUserPage.tsx": [
+          239
+        ],
+        "vs-drag-drop-rbe:middleware/auth.ts": [
+          16
+        ],
+        "vs-drag-drop-rbe:routes/templateEnums.ts": [
+          47,
+          98,
+          144,
+          202,
+          247
+        ],
+        "vs-drag-drop-rbe:routes/templatePages.ts": [
+          47,
+          98,
+          144,
+          202,
+          247
+        ],
+        "vs-drag-drop-rbe:routes/templateResources.ts": [
+          47,
+          98,
+          144,
+          202,
+          247
+        ],
+        "vs-drag-drop-rbe:routes/templates.ts": [
+          48,
+          102,
+          151,
+          212,
+          258
+        ],
+        "vs-drag-drop-rbe:routes/server_keycloak.ts": [
+          72
+        ]
+      }
+    },
+    {
+      "rank": 19,
+      "severity": "MAJOR",
+      "issue_detail": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+      "recurrence": 21,
+      "locations": {
+        "vs-drag-drop-rbe:models/CardStyle.tsx": [
+          49,
+          59
+        ],
+        "vs-drag-drop-rbe:models/TableStyle.tsx": [
+          77,
+          88
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_list.tsx": [
+          292,
+          332,
+          378
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/layout/Sidebar.tsx": [
+          84
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          326,
+          361,
+          396
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          591
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx": [
+          281,
+          302,
+          344,
+          363
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/RolesBulkUploadPage.tsx": [
+          107
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/BulkUploadPage.tsx": [
+          106
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx": [
+          304,
+          305
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/ToastContainer.tsx": [
+          16
+        ]
+      }
+    },
+    {
+      "rank": 20,
+      "severity": "MAJOR",
+      "issue_detail": "Unnecessary escape character: \\\".",
+      "recurrence": 20,
+      "locations": {
+        "vs-drag-drop-rbe:utils/html.ts": [
+          203,
+          207,
+          208,
+          209,
+          426,
+          430,
+          431,
+          432,
+          602,
+          603
+        ]
+      }
+    },
+    {
+      "rank": 21,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'prisma' is never reassigned; mark it as `readonly`.",
+      "recurrence": 15,
+      "locations": {
+        "vs-drag-drop-rbe:repository/SyncQueueRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/WorkflowStateDataRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/WorkflowRepository.ts": [
+          6
+        ],
+        "vs-drag-drop-rbe:repository/ApplicationDecoratorRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/ApplicationEnumRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/ApplicationRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/CustomComponentRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/PageRepository.ts": [
+          5
+        ],
+        "vs-drag-drop-rbe:repository/ResourceRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/TemplateEnumRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/TemplatePageRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/TemplateRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/TemplateResourceRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/UserApplicationMapRepository.ts": [
+          4
+        ],
+        "vs-drag-drop-rbe:repository/UserRepository.ts": [
+          4
+        ]
+      }
+    },
+    {
+      "rank": 22,
+      "severity": "MAJOR",
+      "issue_detail": "The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles.",
+      "recurrence": 11,
+      "locations": {
+        "vs-drag-drop-rbe:models/SelectedSidebar.tsx": [
+          72,
+          130
+        ],
+        "vs-drag-drop-rbe:models/Tabs.tsx": [
+          54,
+          92
+        ],
+        "vs-drag-drop-rbe:models/Card.tsx": [
+          97,
+          112
+        ],
+        "vs-drag-drop-rbe:models/LoginTemplate2.tsx": [
+          75,
+          89
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login1.tsx": [
+          70
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login2.tsx": [
+          70
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login3.tsx": [
+          70
+        ]
+      }
+    },
+    {
+      "rank": 23,
+      "severity": "MAJOR",
+      "issue_detail": "Do not use Array index in keys",
+      "recurrence": 9,
+      "locations": {
+        "vs-drag-drop-rbe:models/SelectedNavbar.tsx": [
+          75,
+          143
+        ],
+        "vs-drag-drop-rbe:models/CardStyle.tsx": [
+          36
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          677
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Registration/UsersPage.tsx": [
+          171
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/UsersPage.tsx": [
+          171
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/ViewUserPage.tsx": [
+          242
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/DataTable.tsx": [
+          42
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/tables/DataTable.tsx": [
+          42
+        ]
+      }
+    },
+    {
+      "rank": 24,
+      "severity": "MAJOR",
+      "issue_detail": "Provide multiple methods instead of using \"checked\" to determine which action to take.",
+      "recurrence": 8,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Registration/UsersPage.tsx": [
+          36,
+          44
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx": [
+          54,
+          62
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/RolesPage.tsx": [
+          33,
+          41
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/UsersPage.tsx": [
+          36,
+          44
+        ]
+      }
+    },
+    {
+      "rank": 25,
+      "severity": "MAJOR",
+      "issue_detail": "Text does not meet the minimal contrast requirement with its background.",
+      "recurrence": 7,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/AppContent.module.css": [
+          228
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Dashboard.css": [
+          165
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Registration/UsersPage.module.css": [
+          296
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/ToastContainer.css": [
+          34,
+          44
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/UsersPage.module.css": [
+          296
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/ViewUserPage.module.css": [
+          347
+        ]
+      }
+    },
+    {
+      "rank": 26,
+      "severity": "MAJOR",
+      "issue_detail": "Ambiguous spacing after previous element input",
+      "recurrence": 6,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/ViewRoleResourceMappingPage.tsx": [
+          523,
+          532,
+          541,
+          550,
+          559,
+          568
+        ]
+      }
+    },
+    {
+      "rank": 27,
+      "severity": "MAJOR",
+      "issue_detail": "Prefer `throw error` over `return Promise.reject(error)`.",
+      "recurrence": 5,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/authApis.tsx": [
+          98,
+          128,
+          149,
+          240,
+          245
+        ]
+      }
+    },
+    {
+      "rank": 28,
+      "severity": "MAJOR",
+      "issue_detail": "Ambiguous spacing after previous element i",
+      "recurrence": 4,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          358,
+          389,
+          535,
+          729
+        ]
+      }
+    },
+    {
+      "rank": 29,
+      "severity": "MAJOR",
+      "issue_detail": "Anchor used as a button. Anchors are primarily expected to navigate. Use the button element instead.",
+      "recurrence": 4,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          162
+        ],
+        "vs-drag-drop-rbe:models/DropDown.tsx": [
+          88,
+          147,
+          173
+        ]
+      }
+    },
+    {
+      "rank": 30,
+      "severity": "MAJOR",
+      "issue_detail": "Missing \"key\" prop for element in iterator",
+      "recurrence": 4,
+      "locations": {
+        "vs-drag-drop-rbe:models/SelectedSidebar.tsx": [
+          129
+        ],
+        "vs-drag-drop-rbe:models/DropDown.tsx": [
+          87,
+          146,
+          172
+        ]
+      }
+    },
+    {
+      "rank": 31,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'render' is never reassigned; mark it as `readonly`.",
+      "recurrence": 3,
+      "locations": {
+        "vs-drag-drop-rbe:models/CreateResource.tsx": [
+          36
+        ],
+        "vs-drag-drop-rbe:models/ReadResource.tsx": [
+          66
+        ],
+        "vs-drag-drop-rbe:models/Collection.tsx": [
+          46
+        ]
+      }
+    },
+    {
+      "rank": 32,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"params\".",
+      "recurrence": 3,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx": [
+          173
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/AddRolePage.tsx": [
+          117
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/backend.tsx": [
+          31
+        ]
+      }
+    },
+    {
+      "rank": 33,
+      "severity": "MAJOR",
+      "issue_detail": "A form label must be associated with a control.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          195
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/ViewUserPage.tsx": [
+          235
+        ]
+      }
+    },
+    {
+      "rank": 34,
+      "severity": "MAJOR",
+      "issue_detail": "Extract this nested ternary operation into an independent statement.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:utils/utils.tsx": [
+          7
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Calendar/Calendar.tsx": [
+          23
+        ]
+      }
+    },
+    {
+      "rank": 35,
+      "severity": "MAJOR",
+      "issue_detail": "Remove duplicates in this character class.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:utils/html.ts": [
+          602,
+          603
+        ]
+      }
+    },
+    {
+      "rank": 36,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"cssImportPathForNavSidebar\".",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          494,
+          514
+        ]
+      }
+    },
+    {
+      "rank": 37,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"timestamp\".",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:routes/Enum.ts": [
+          73
+        ],
+        "vs-drag-drop-rbe:routes/pages.ts": [
+          78
+        ]
+      }
+    },
+    {
+      "rank": 38,
+      "severity": "MAJOR",
+      "issue_detail": "Review this redundant assignment: \"isRoleCreated\" already holds the assigned value along all execution paths.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx": [
+          135
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/AddRolePage.tsx": [
+          79
+        ]
+      }
+    },
+    {
+      "rank": 39,
+      "severity": "MAJOR",
+      "issue_detail": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/context/DataContext.tsx": [
+          80
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/context/LoginContext.tsx": [
+          51
+        ]
+      }
+    },
+    {
+      "rank": 40,
+      "severity": "MAJOR",
+      "issue_detail": "Unexpected duplicate selector \".btn:disabled\", first used at line 183",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/RolesBulkUploadPage.module.css": [
+          282
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/BulkUploadPage.module.css": [
+          282
+        ]
+      }
+    },
+    {
+      "rank": 41,
+      "severity": "MAJOR",
+      "issue_detail": "Unnecessary escape character: \\-.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login.tsx": [
+          25
+        ]
+      }
+    },
+    {
+      "rank": 42,
+      "severity": "MAJOR",
+      "issue_detail": "Use <output> instead of the \"status\" role to ensure accessibility across all devices.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_list.tsx": [
+          135
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          82
+        ]
+      }
+    },
+    {
+      "rank": 43,
+      "severity": "MAJOR",
+      "issue_detail": "Use <progress> instead of the \"progressbar\" role to ensure accessibility across all devices.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/ProgressBar.tsx": [
+          38,
+          59
+        ]
+      }
+    },
+    {
+      "rank": 44,
+      "severity": "MAJOR",
+      "issue_detail": "'If' statement should not be the only statement in 'else' block",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/importApp.ts": [
+          114
+        ]
+      }
+    },
+    {
+      "rank": 45,
+      "severity": "MAJOR",
+      "issue_detail": "Ambiguous spacing before next element i",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          515
+        ]
+      }
+    },
+    {
+      "rank": 46,
+      "severity": "MAJOR",
+      "issue_detail": "Async arrow function has too many parameters (9). Maximum allowed is 7.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          286
+        ]
+      }
+    },
+    {
+      "rank": 47,
+      "severity": "MAJOR",
+      "issue_detail": "Constructor has too many parameters (9). Maximum allowed is 7.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          28
+        ]
+      }
+    },
+    {
+      "rank": 48,
+      "severity": "MAJOR",
+      "issue_detail": "Extract the assignment of \"this.ccId\" from this expression.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/UIElement.ts": [
+          167
+        ]
+      }
+    },
+    {
+      "rank": 49,
+      "severity": "MAJOR",
+      "issue_detail": "Extract the assignment of \"this.path\" from this expression.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/UIElement.ts": [
+          150
+        ]
+      }
+    },
+    {
+      "rank": 50,
+      "severity": "MAJOR",
+      "issue_detail": "Extract the assignment of \"this.type\" from this expression.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/UIElement.ts": [
+          155
+        ]
+      }
+    },
+    {
+      "rank": 51,
+      "severity": "MAJOR",
+      "issue_detail": "Extract the assignment of \"this.uniqueId\" from this expression.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/UIElement.ts": [
+          162
+        ]
+      }
+    },
+    {
+      "rank": 52,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'apisMap' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          51
+        ]
+      }
+    },
+    {
+      "rank": 53,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'baseUrl' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/keycloak.service.ts": [
+          4
+        ]
+      }
+    },
+    {
+      "rank": 54,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'clientId' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/keycloak.service.ts": [
+          6
+        ]
+      }
+    },
+    {
+      "rank": 55,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'clientSecret' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/keycloak.service.ts": [
+          7
+        ]
+      }
+    },
+    {
+      "rank": 56,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'componentMap' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          52
+        ]
+      }
+    },
+    {
+      "rank": 57,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'handleClick' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/Button.tsx": [
+          193
+        ]
+      }
+    },
+    {
+      "rank": 58,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'myItemClick' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/DropDown.tsx": [
+          8
+        ]
+      }
+    },
+    {
+      "rank": 59,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'operationMap' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          53
+        ]
+      }
+    },
+    {
+      "rank": 60,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'realm' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/keycloak.service.ts": [
+          5
+        ]
+      }
+    },
+    {
+      "rank": 61,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'serialisePageUIItemsMap' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          49
+        ]
+      }
+    },
+    {
+      "rank": 62,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'styleMap' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          50
+        ]
+      }
+    },
+    {
+      "rank": 63,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'traverseSerialisedMap' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          232
+        ]
+      }
+    },
+    {
+      "rank": 64,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'traverseSerialisedMapForDownload' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          260
+        ]
+      }
+    },
+    {
+      "rank": 65,
+      "severity": "MAJOR",
+      "issue_detail": "Member 'workflowStateDataRepository' is never reassigned; mark it as `readonly`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/WorkflowStateDataService.ts": [
+          4
+        ]
+      }
+    },
+    {
+      "rank": 66,
+      "severity": "MAJOR",
+      "issue_detail": "Method 'traverseSerialisedMapForDownload' has too many parameters (10). Maximum allowed is 7.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          260
+        ]
+      }
+    },
+    {
+      "rank": 67,
+      "severity": "MAJOR",
+      "issue_detail": "Move this array \"reverse\" operation to a separate statement or replace it with \"toReversed\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          585
+        ]
+      }
+    },
+    {
+      "rank": 68,
+      "severity": "MAJOR",
+      "issue_detail": "Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          712
+        ]
+      }
+    },
+    {
+      "rank": 69,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"accessToken\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login.tsx": [
+          81
+        ]
+      }
+    },
+    {
+      "rank": 70,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"allUsers\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/ViewRolePage.tsx": [
+          24
+        ]
+      }
+    },
+    {
+      "rank": 71,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"appName\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/GenerateBackend.ts": [
+          98
+        ]
+      }
+    },
+    {
+      "rank": 72,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"availableRoles\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          37
+        ]
+      }
+    },
+    {
+      "rank": 73,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"clientId\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_list.tsx": [
+          40
+        ]
+      }
+    },
+    {
+      "rank": 74,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"dataLoading\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/ViewRolePage.tsx": [
+          15
+        ]
+      }
+    },
+    {
+      "rank": 75,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"decoded\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/templates.ts": [
+          108
+        ]
+      }
+    },
+    {
+      "rank": 76,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"editComponentName\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          674
+        ]
+      }
+    },
+    {
+      "rank": 77,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"handleRoleDropdownClose\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx": [
+          243
+        ]
+      }
+    },
+    {
+      "rank": 78,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"handleUserDropdownClose\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx": [
+          238
+        ]
+      }
+    },
+    {
+      "rank": 79,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"isLoading\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          12
+        ]
+      }
+    },
+    {
+      "rank": 80,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"localHash\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/pages.ts": [
+          203
+        ]
+      }
+    },
+    {
+      "rank": 81,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"location\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/ViewRoleResourceMappingPage.tsx": [
+          26
+        ]
+      }
+    },
+    {
+      "rank": 82,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"onClick\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          175
+        ]
+      }
+    },
+    {
+      "rank": 83,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"refreshToken\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login.tsx": [
+          82
+        ]
+      }
+    },
+    {
+      "rank": 84,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"setColumnDefs\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/Table/ApiExample.jsx": [
+          31
+        ]
+      }
+    },
+    {
+      "rank": 85,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"setUser\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login.tsx": [
+          17
+        ]
+      }
+    },
+    {
+      "rank": 86,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"setWorkflowData\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          16
+        ]
+      }
+    },
+    {
+      "rank": 87,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"userRoleMappings\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx": [
+          16
+        ]
+      }
+    },
+    {
+      "rank": 88,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"user_Id\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:server.ts": [
+          169
+        ]
+      }
+    },
+    {
+      "rank": 89,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"validateForm\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          216
+        ]
+      }
+    },
+    {
+      "rank": 90,
+      "severity": "MAJOR",
+      "issue_detail": "Remove this useless assignment to variable \"workflowData\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          16
+        ]
+      }
+    },
+    {
+      "rank": 91,
+      "severity": "MAJOR",
+      "issue_detail": "Replace \"as\" with upper case format \"AS\".",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:Dockerfile": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 92,
+      "severity": "MAJOR",
+      "issue_detail": "This always evaluates to truthy. Consider refactoring this code.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/utils.tsx": [
+          34
+        ]
+      }
+    },
+    {
+      "rank": 93,
+      "severity": "MAJOR",
+      "issue_detail": "Unexpected duplicate selector \".btn:disabled\", first used at line 144",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/AddRolePage.module.css": [
+          225
+        ]
+      }
+    },
+    {
+      "rank": 94,
+      "severity": "MAJOR",
+      "issue_detail": "Unexpected duplicate selector \".btn:disabled\", first used at line 177",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/ViewUserPage.module.css": [
+          292
+        ]
+      }
+    },
+    {
+      "rank": 95,
+      "severity": "MAJOR",
+      "issue_detail": "Unexpected duplicate selector \".btn:disabled\", first used at line 180",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/AddUserPage.module.css": [
+          266
+        ]
+      }
+    },
+    {
+      "rank": 96,
+      "severity": "MAJOR",
+      "issue_detail": "Unexpected duplicate selector \".btn:disabled\", first used at line 184",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/ViewRolePage.module.css": [
+          429
+        ]
+      }
+    },
+    {
+      "rank": 97,
+      "severity": "MAJOR",
+      "issue_detail": "Unexpected duplicate selector \".roleResourceMappingPage\", first used at line 2",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.module.css": [
+          8
+        ]
+      }
+    },
+    {
+      "rank": 98,
+      "severity": "MAJOR",
+      "issue_detail": "Update this function so that its implementation is not identical to the one on line 232.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/html.ts": [
+          452
+        ]
+      }
+    },
+    {
+      "rank": 99,
+      "severity": "MAJOR",
+      "issue_detail": "Update this function so that its implementation is not identical to the one on line 62.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/context/DataContext.tsx": [
+          69
+        ]
+      }
+    },
+    {
+      "rank": 100,
+      "severity": "MINOR",
+      "issue_detail": "Prefer `String#replaceAll()` over `String#replace()`.",
+      "recurrence": 55,
+      "locations": {
+        "vs-drag-drop-rbe:utils/html.ts": [
+          11,
+          114,
+          115,
+          116,
+          131,
+          191,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          357,
+          413,
+          424,
+          425,
+          426,
+          427,
+          428,
+          429,
+          430,
+          431,
+          432,
+          433,
+          434,
+          435,
+          544,
+          621,
+          622,
+          632,
+          633,
+          634,
+          635,
+          637,
+          643
+        ],
+        "vs-drag-drop-rbe:routes/exportApp.ts": [
+          124
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          20,
+          424
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_list.tsx": [
+          16
+        ],
+        "vs-drag-drop-rbe:repository/WorkflowRepository.ts": [
+          95,
+          96
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          431,
+          480,
+          744
+        ],
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          414
+        ],
+        "vs-drag-drop-rbe:config/apiConfig.ts": [
+          27
+        ]
+      }
+    },
+    {
+      "rank": 101,
+      "severity": "MINOR",
+      "issue_detail": "Handle this exception or don't catch it at all.",
+      "recurrence": 28,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          326,
+          510
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx": [
+          181
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/AddRolePage.tsx": [
+          125
+        ],
+        "vs-drag-drop-rbe:api/generateAppzip.ts": [
+          26
+        ],
+        "vs-drag-drop-rbe:middleware/auth.ts": [
+          29,
+          51,
+          76
+        ],
+        "vs-drag-drop-rbe:routes/templateEnums.ts": [
+          53,
+          104,
+          150,
+          208,
+          253
+        ],
+        "vs-drag-drop-rbe:routes/templatePages.ts": [
+          53,
+          104,
+          150,
+          208,
+          253
+        ],
+        "vs-drag-drop-rbe:routes/templateResources.ts": [
+          53,
+          104,
+          150,
+          208,
+          253
+        ],
+        "vs-drag-drop-rbe:routes/templates.ts": [
+          58,
+          112,
+          157,
+          218,
+          264
+        ]
+      }
+    },
+    {
+      "rank": 102,
+      "severity": "MINOR",
+      "issue_detail": "Prefer `Number.parseInt` over `parseInt`.",
+      "recurrence": 11,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          224,
+          447,
+          456,
+          609,
+          617,
+          779,
+          859,
+          868,
+          927,
+          936
+        ],
+        "vs-drag-drop-rbe:server.ts": [
+          76
+        ]
+      }
+    },
+    {
+      "rank": 103,
+      "severity": "MINOR",
+      "issue_detail": "Prefer `globalThis` over `window`.",
+      "recurrence": 7,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          131
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/authApis.tsx": [
+          148,
+          236,
+          237
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/layout/Header.tsx": [
+          16
+        ],
+        "vs-drag-drop-rbe:utils/utils.tsx": [
+          6
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/Table/ApiExample.jsx": [
+          28
+        ]
+      }
+    },
+    {
+      "rank": 104,
+      "severity": "MINOR",
+      "issue_detail": "'express' imported multiple times.",
+      "recurrence": 6,
+      "locations": {
+        "vs-drag-drop-rbe:routes/generateApp.ts": [
+          1,
+          6
+        ],
+        "vs-drag-drop-rbe:routes/rootDownload.ts": [
+          1,
+          3
+        ],
+        "vs-drag-drop-rbe:routes/saveThenDownload.ts": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "rank": 105,
+      "severity": "MINOR",
+      "issue_detail": "'react' imported multiple times.",
+      "recurrence": 6,
+      "locations": {
+        "vs-drag-drop-rbe:models/CardStyle.tsx": [
+          2,
+          3
+        ],
+        "vs-drag-drop-rbe:models/Tabs.tsx": [
+          1,
+          7
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login.tsx": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "rank": 106,
+      "severity": "MINOR",
+      "issue_detail": "Prefer `node:path` over `path`.",
+      "recurrence": 6,
+      "locations": {
+        "vs-drag-drop-rbe:utils/file.ts": [
+          1
+        ],
+        "vs-drag-drop-rbe:utils/html.ts": [
+          5
+        ],
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          10
+        ],
+        "vs-drag-drop-rbe:routes/generateApp.ts": [
+          10
+        ],
+        "vs-drag-drop-rbe:utils/zipanddownload.ts": [
+          1
+        ],
+        "vs-drag-drop-rbe:server.ts": [
+          5
+        ]
+      }
+    },
+    {
+      "rank": 107,
+      "severity": "MINOR",
+      "issue_detail": "Prefer class field declaration over `this` assignment in constructor for static values.",
+      "recurrence": 5,
+      "locations": {
+        "vs-drag-drop-rbe:models/AppUIStructure.tsx": [
+          13
+        ],
+        "vs-drag-drop-rbe:models/PageUIStructure.tsx": [
+          13
+        ],
+        "vs-drag-drop-rbe:models/RASPUIApplication.tsx": [
+          16
+        ],
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          44
+        ],
+        "vs-drag-drop-rbe:models/UserInfo.tsx": [
+          45
+        ]
+      }
+    },
+    {
+      "rank": 108,
+      "severity": "MINOR",
+      "issue_detail": "Unexpected negated condition.",
+      "recurrence": 5,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          658
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          110,
+          300
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/ViewRolePage.tsx": [
+          244
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/users/ViewUserPage.tsx": [
+          257
+        ]
+      }
+    },
+    {
+      "rank": 109,
+      "severity": "MINOR",
+      "issue_detail": "'@prisma/client' imported multiple times.",
+      "recurrence": 4,
+      "locations": {
+        "vs-drag-drop-rbe:services/GenerateBackend.ts": [
+          5,
+          6
+        ],
+        "vs-drag-drop-rbe:services/GenerateCombinedZip.ts": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "rank": 110,
+      "severity": "MINOR",
+      "issue_detail": "Media elements such as <audio> and <video> must have a <track> for captions.",
+      "recurrence": 4,
+      "locations": {
+        "vs-drag-drop-rbe:models/Audio.tsx": [
+          26,
+          35
+        ],
+        "vs-drag-drop-rbe:models/Video.tsx": [
+          77,
+          112
+        ]
+      }
+    },
+    {
+      "rank": 111,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'verifyJWT'.",
+      "recurrence": 4,
+      "locations": {
+        "vs-drag-drop-rbe:routes/applicationDecorators.ts": [
+          3
+        ],
+        "vs-drag-drop-rbe:routes/saveApp.ts": [
+          2
+        ],
+        "vs-drag-drop-rbe:routes/setAppContext.ts": [
+          2
+        ],
+        "vs-drag-drop-rbe:server.ts": [
+          12
+        ]
+      }
+    },
+    {
+      "rank": 112,
+      "severity": "MINOR",
+      "issue_detail": "The empty object is useless.",
+      "recurrence": 4,
+      "locations": {
+        "vs-drag-drop-rbe:store/useResourceStore.ts": [
+          50,
+          68,
+          70,
+          102
+        ]
+      }
+    },
+    {
+      "rank": 113,
+      "severity": "MINOR",
+      "issue_detail": "Use the \"RegExp.exec()\" method instead.",
+      "recurrence": 4,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/RoleResourceMappingPage.tsx": [
+          168
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/AddRolePage.tsx": [
+          112
+        ],
+        "vs-drag-drop-rbe:utils/html.ts": [
+          602,
+          603
+        ]
+      }
+    },
+    {
+      "rank": 114,
+      "severity": "MINOR",
+      "issue_detail": "'./ToDoCustomComponent' imported multiple times.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/ElementFactory.ts": [
+          19,
+          20
+        ]
+      }
+    },
+    {
+      "rank": 115,
+      "severity": "MINOR",
+      "issue_detail": "'any' overrides all other types in this union type.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          17
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_list.tsx": [
+          13
+        ]
+      }
+    },
+    {
+      "rank": 116,
+      "severity": "MINOR",
+      "issue_detail": "<iframe> elements must have a unique title property.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/Video.tsx": [
+          72,
+          94
+        ]
+      }
+    },
+    {
+      "rank": 117,
+      "severity": "MINOR",
+      "issue_detail": "Prefer `structuredClone(…)` over `JSON.parse(JSON.stringify(…))` to create a deep clone.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/ViewRoleResourceMappingPage.tsx": [
+          159,
+          439
+        ]
+      }
+    },
+    {
+      "rank": 118,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'Button'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          12
+        ],
+        "vs-drag-drop-rbe:models/UIElement.ts": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 119,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'EDITABLE_TYPE'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/CreateResource.tsx": [
+          4
+        ],
+        "vs-drag-drop-rbe:models/ReadResource.tsx": [
+          7
+        ]
+      }
+    },
+    {
+      "rank": 120,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'Editables'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/CreateResource.tsx": [
+          5
+        ],
+        "vs-drag-drop-rbe:models/ReadResource.tsx": [
+          7
+        ]
+      }
+    },
+    {
+      "rank": 121,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'JsonValue'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:constants/constants.ts": [
+          1
+        ],
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          56
+        ]
+      }
+    },
+    {
+      "rank": 122,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'Resource'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:services/GenerateCombinedZip.ts": [
+          2
+        ],
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          11
+        ]
+      }
+    },
+    {
+      "rank": 123,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'Role'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/apis/authApis.tsx": [
+          11
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/UserRoleMappingPage.tsx": [
+          6
+        ]
+      }
+    },
+    {
+      "rank": 124,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'Router'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/App.js": [
+          3
+        ],
+        "vs-drag-drop-rbe:React Apps/Base App/src/components/AppContent.tsx": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 125,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'SingleEditable'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/SelectedSidebar.tsx": [
+          6
+        ],
+        "vs-drag-drop-rbe:models/Resources.tsx": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 126,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'hashUnitContent'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:repository/PageRepository.ts": [
+          2
+        ],
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          12
+        ]
+      }
+    },
+    {
+      "rank": 127,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'renderToStaticMarkup'.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          8
+        ],
+        "vs-drag-drop-rbe:models/UIElement.ts": [
+          1
+        ]
+      }
+    },
+    {
+      "rank": 128,
+      "severity": "MINOR",
+      "issue_detail": "The async arrow function should be named.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:tests/globalSetup.ts": [
+          12
+        ],
+        "vs-drag-drop-rbe:tests/globalTeardown.ts": [
+          6
+        ]
+      }
+    },
+    {
+      "rank": 129,
+      "severity": "MINOR",
+      "issue_detail": "This assertion is unnecessary since it does not change the type of the expression.",
+      "recurrence": 2,
+      "locations": {
+        "vs-drag-drop-rbe:utils/file.ts": [
+          155
+        ],
+        "vs-drag-drop-rbe:routes/server_keycloak.ts": [
+          57
+        ]
+      }
+    },
+    {
+      "rank": 130,
+      "severity": "MINOR",
+      "issue_detail": "A fragment with only one child is redundant.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/CardStyle.tsx": [
+          35
+        ]
+      }
+    },
+    {
+      "rank": 131,
+      "severity": "MINOR",
+      "issue_detail": "Merge this RUN instruction with the consecutive ones.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:Dockerfile": [
+          39
+        ]
+      }
+    },
+    {
+      "rank": 132,
+      "severity": "MINOR",
+      "issue_detail": "Prefer `globalThis.window` over `window`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/utils.tsx": [
+          5
+        ]
+      }
+    },
+    {
+      "rank": 133,
+      "severity": "MINOR",
+      "issue_detail": "Prefer `node:fs/promises` over `fs/promises`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:server.ts": [
+          45
+        ]
+      }
+    },
+    {
+      "rank": 134,
+      "severity": "MINOR",
+      "issue_detail": "Remove the declaration of the unused 'setColumnDefs' variable.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/Table/ApiExample.jsx": [
+          31
+        ]
+      }
+    },
+    {
+      "rank": 135,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'API_CONFIG_CONTENT'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/file.ts": [
+          5
+        ]
+      }
+    },
+    {
+      "rank": 136,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'AgGridReact'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/Collection.tsx": [
+          4
+        ]
+      }
+    },
+    {
+      "rank": 137,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'AppError'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/UserService.ts": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 138,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'ApplicationEnum'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/GenerateCombinedZip.ts": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 139,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'ArrayEditable'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/ReadResource.tsx": [
+          7
+        ]
+      }
+    },
+    {
+      "rank": 140,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'CARD_ATTR_IMG'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/CardStyle.tsx": [
+          5
+        ]
+      }
+    },
+    {
+      "rank": 141,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'Collection'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          13
+        ]
+      }
+    },
+    {
+      "rank": 142,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'Container'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          4
+        ]
+      }
+    },
+    {
+      "rank": 143,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'CustomComponent'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/exportApp.ts": [
+          7
+        ]
+      }
+    },
+    {
+      "rank": 144,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'DMS_PORT'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/workflow_form.tsx": [
+          6
+        ]
+      }
+    },
+    {
+      "rank": 145,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'InputCalender'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/UIElement.ts": [
+          4
+        ]
+      }
+    },
+    {
+      "rank": 146,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'NextFunction'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:server.ts": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 147,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'NotFoundError'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/pages.ts": [
+          6
+        ]
+      }
+    },
+    {
+      "rank": 148,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'PrismaClient'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/workflowNode.ts": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 149,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'ResourceService'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          5
+        ]
+      }
+    },
+    {
+      "rank": 150,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'SelectedNavbar'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          57
+        ]
+      }
+    },
+    {
+      "rank": 151,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'TemplateEnum'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/TemplateService.ts": [
+          1
+        ]
+      }
+    },
+    {
+      "rank": 152,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'TemplatePage'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/TemplateService.ts": [
+          1
+        ]
+      }
+    },
+    {
+      "rank": 153,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'TemplateResource'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/TemplateService.ts": [
+          1
+        ]
+      }
+    },
+    {
+      "rank": 154,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'UIElement'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/UserInfo.tsx": [
+          4
+        ]
+      }
+    },
+    {
+      "rank": 155,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'User'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/exportApp.ts": [
+          7
+        ]
+      }
+    },
+    {
+      "rank": 156,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'WORKFLOW_BASE_URL'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          6
+        ]
+      }
+    },
+    {
+      "rank": 157,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'WorkflowDefinition'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/backend/api.tsx": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 158,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'app'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/ApplicationService.ts": [
+          15
+        ]
+      }
+    },
+    {
+      "rank": 159,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'applicationService'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/generateApp.ts": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 160,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'authAPI'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/ViewRolePage.tsx": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 161,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'createOrUpdateNodeConfig'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:repository/WorkflowRepository.ts": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 162,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'customComponentService'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/exportApp.ts": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 163,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'data'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          14
+        ]
+      }
+    },
+    {
+      "rank": 164,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'ejs'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          55
+        ]
+      }
+    },
+    {
+      "rank": 165,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'element'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/ElementFactory.ts": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 166,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'extractCardHtml'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          31
+        ]
+      }
+    },
+    {
+      "rank": 167,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'fs'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:server.ts": [
+          45
+        ]
+      }
+    },
+    {
+      "rank": 168,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'generateProject'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/generateApp.ts": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 169,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'getAppIdFromUrl'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/ReadResource.tsx": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 170,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'mockDataAPI'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/roles/ViewRolePage.tsx": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 171,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'removeComponentHtml'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:utils/project-generator.ts": [
+          40
+        ]
+      }
+    },
+    {
+      "rank": 172,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'stringify'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/pages.ts": [
+          8
+        ]
+      }
+    },
+    {
+      "rank": 173,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'templateEnumsRouter'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:server.ts": [
+          24
+        ]
+      }
+    },
+    {
+      "rank": 174,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'templatePagesRouter'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:server.ts": [
+          22
+        ]
+      }
+    },
+    {
+      "rank": 175,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'templateResourcesRouter'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:server.ts": [
+          23
+        ]
+      }
+    },
+    {
+      "rank": 176,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'templatesRouter'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:server.ts": [
+          21
+        ]
+      }
+    },
+    {
+      "rank": 177,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'useContext'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/RASPUIPage.tsx": [
+          1
+        ]
+      }
+    },
+    {
+      "rank": 178,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'useLocation'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/App.js": [
+          3
+        ]
+      }
+    },
+    {
+      "rank": 179,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'useResourceStore'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/ReadResource.tsx": [
+          2
+        ]
+      }
+    },
+    {
+      "rank": 180,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'useStartWorkflow'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/components/WorkflowListExecutions.tsx": [
+          7
+        ]
+      }
+    },
+    {
+      "rank": 181,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'useState'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/InputCalendar.tsx": [
+          1
+        ]
+      }
+    },
+    {
+      "rank": 182,
+      "severity": "MINOR",
+      "issue_detail": "Remove this unused import of 'xxhash'.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/pages.ts": [
+          9
+        ]
+      }
+    },
+    {
+      "rank": 183,
+      "severity": "MINOR",
+      "issue_detail": "Rename class \"flexContainer\" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/FlexContainer.tsx": [
+          5
+        ]
+      }
+    },
+    {
+      "rank": 184,
+      "severity": "MINOR",
+      "issue_detail": "Rename class \"promoflightNavCode\" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/PromoFlightNavCode.tsx": [
+          4
+        ]
+      }
+    },
+    {
+      "rank": 185,
+      "severity": "MINOR",
+      "issue_detail": "Rename interface \"workflowExecution\" to match the regular expression ^[A-Z][a-zA-Z0-9]*$.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/workflow/types/types.tsx": [
+          67
+        ]
+      }
+    },
+    {
+      "rank": 186,
+      "severity": "MINOR",
+      "issue_detail": "Replace this union type with a type alias.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:React Apps/Base App/src/pages/mappings/ViewRoleResourceMappingPage.tsx": [
+          175
+        ]
+      }
+    },
+    {
+      "rank": 187,
+      "severity": "MINOR",
+      "issue_detail": "This assertion is unnecessary since the receiver accepts the original type of the expression.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/server_keycloak.ts": [
+          53
+        ]
+      }
+    },
+    {
+      "rank": 188,
+      "severity": "MINOR",
+      "issue_detail": "Unnecessary use of conditional expression for default assignment.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:routes/server_keycloak.ts": [
+          145
+        ]
+      }
+    },
+    {
+      "rank": 189,
+      "severity": "MINOR",
+      "issue_detail": "Use `new Error()` instead of `Error()`.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:models/ElementFactory.ts": [
+          325
+        ]
+      }
+    },
+    {
+      "rank": 190,
+      "severity": "MINOR",
+      "issue_detail": "Useless constructor.",
+      "recurrence": 1,
+      "locations": {
+        "vs-drag-drop-rbe:services/GenerateCombinedZip.ts": [
+          27
+        ]
+      }
+    }
+  ],
+  "security_hotspots": [
+    {
+      "severity": "LOW",
+      "issue_detail": "Make sure not using resource integrity feature is safe here.",
+      "file_path": "vs-drag-drop-rbe:React Apps/Base App/public/index.html",
+      "line_number": 12
+    },
+    {
+      "severity": "LOW",
+      "issue_detail": "Make sure that expanding this archive file is safe here.",
+      "file_path": "vs-drag-drop-rbe:utils/zipanddownload.ts",
+      "line_number": 51
+    }
+  ],
+  "diff": {
+    "previous_verification_id": "a029a937-0a59-4b7d-bfc7-9c2dcb35ac78",
+    "new_issues": [
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": 45,
+        "type": "CODE_SMELL",
+        "severity": "MINOR",
+        "message": "Remove this unused import of 'fs'."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:Dockerfile",
+        "line_number": 39,
+        "type": "CODE_SMELL",
+        "severity": "MINOR",
+        "message": "Merge this RUN instruction with the consecutive ones."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login.tsx",
+        "line_number": 25,
+        "type": "CODE_SMELL",
+        "severity": "MAJOR",
+        "message": "Unnecessary escape character: \\-."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:React Apps/Base App/src/components/Login/Login.tsx",
+        "line_number": 25,
+        "type": "CODE_SMELL",
+        "severity": "MAJOR",
+        "message": "Unnecessary escape character: \\-."
+      }
+    ],
+    "resolved_issues": [
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      },
+      {
+        "file_path": "vs-drag-drop-rbe:server.ts",
+        "line_number": null,
+        "type": "VULNERABILITY",
+        "severity": "MAJOR",
+        "message": "Make sure this dynamically formatted template is safe here."
+      }
+    ],
+    "persisting_issue_count": 651
+  }
+}

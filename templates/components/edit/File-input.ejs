@@ -1,0 +1,13 @@
+<input
+  className="form-control"
+  type="file"
+  name="<%= fieldMeta.name %>"
+  required={<%= !!fieldMeta.required %>}
+  onChange={(e) =>
+    handleEdit(
+      id,
+      "<%= fieldMeta.name %>",
+      e.target.files?.[0] || null
+    )
+  }
+/>

@@ -1,0 +1,65 @@
+{(() => {
+  const options = foreignKeyData["<%= refResource %>"] || [];
+  const filteredOptions = options.filter((option:any) =>
+    option["<%= foreignField %>"]?.toLowerCase().includes(
+      (searchQueries["<%= fieldName %>"] || "").toLowerCase()
+    )
+  );
+
+  return (
+    <>
+      <button
+        className="btn btn-secondary dropdown-toggle"
+        type="button"
+        id={`dropdownMenu-<%= fieldName %>`}
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        {editedRecord["<%= fieldName %>"]
+          ? options.find(
+              (item:any) =>
+                item["<%= foreignField %>"] === editedRecord["<%= fieldName %>"]
+            )?.["<%= foreignField %>"] || "Select"
+          : `Select <%= fieldName %>`}
+      </button>
+
+      <div
+        className="dropdown-menu"
+        aria-labelledby={`dropdownMenu-<%= fieldName %>`}
+      >
+        <input
+          type="text"
+          className="form-control mb-2"
+          placeholder={`Search <%= fieldName %>`}
+          value={searchQueries["<%= fieldName %>"] || ""}
+          onChange={(e) =>
+            handleSearchChange("<%= fieldName %>", e.target.value)
+          }
+        />
+
+        {filteredOptions.length > 0 ? (
+          filteredOptions.map((option:any, i:any) => (
+            <button
+              key={i}
+              className="dropdown-item"
+              type="button"
+              onClick={() =>
+                setEditedRecord({
+                  ...editedRecord,
+                  ["<%= fieldName %>"]: option["<%= foreignField %>"],
+                })
+              }
+            >
+              {option["<%= foreignField %>"]}
+            </button>
+          ))
+        ) : (
+          <span className="dropdown-item text-muted">
+            No options available
+          </span>
+        )}
+      </div>
+    </>
+  );
+})()}

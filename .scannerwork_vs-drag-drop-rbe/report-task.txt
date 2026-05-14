@@ -1,0 +1,6 @@
+projectKey=vs-drag-drop-rbe
+serverUrl=http://localhost:9001
+serverVersion=26.3.0.120487
+dashboardUrl=http://localhost:9001/dashboard?id=vs-drag-drop-rbe
+ceTaskId=2dfa969a-5e25-4c08-9bcf-ab5f5c75ba80
+ceTaskUrl=http://localhost:9001/api/ce/task?id=2dfa969a-5e25-4c08-9bcf-ab5f5c75ba80

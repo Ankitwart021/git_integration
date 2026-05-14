@@ -1,112 +1,47 @@
-# Verification Service
+# RASP-FE Designer Backend
 
-The Verification Service is a highly concurrent, horizontally scalable FastAPI microservice that orchestrates asynchronous code-quality scans. It interfaces with a load-balanced pool of isolated SonarQube containers, ensuring that multiple LangGraph/AI-generated code snippets can be validated safely and simultaneously.
+This project is the backend for the RASP-FE designer. It is a Node.js application written in TypeScript that uses Express.js for the server and Prisma as the ORM for interacting with a MySQL database.
 
----
+## Folder Structure
 
-## 1. Sequence Diagram
+| Folder | Description |
+| --- | --- |
+| `api` | Contains the API endpoint definitions for the application. Each file corresponds to a different resource. |
+| `config` | Contains configuration files for the application, such as API configuration and Swagger documentation. |
+| `dist` | Contains the compiled JavaScript code that is generated from the TypeScript source code. |
+| `hooks` | Contains custom React hooks that are used in the application. |
+| `middleware` | Contains middleware functions for the Express.js application, such as authentication. |
+| `models` | Contains the data models for the application. These are TypeScript classes that define the structure of the data that is used in the application. |
+| `node_modules` | Contains the third-party libraries that are used in the project. |
+| `prisma` | Contains the Prisma schema file and the database migrations. |
+| `React Apps` | Contains the source code for the React front-end application. |
+| `repository` | Contains the data access layer for the application. The repository classes are responsible for interacting with the database. |
+| `routes` | Contains the Express.js routes for the application. |
+| `services` | Contains the business logic for the application. The service classes are responsible for handling the application's logic and for calling the repository classes. |
+| `src` | Contains utility files for the project. |
+| `templates` | Contains EJS templates that are used to generate code. |
+| `tests` | Contains the tests for the application. |
+| `utils` | Contains utility functions that are used throughout the application. |
 
-Below is the architectural workflow detailing exactly how a `POST /verify` request flows through the internal threading model, spawns out to Docker, and loops back via Webhooks.
+## Environment Variables
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Client
-    participant API as FastAPI (Controller)
-    participant Worker as VerificationWorker (Background)
-    participant Broker as ConcurrencyManager (Pool)
-    participant SQ as SonarQube (Docker Node)
-    participant Callback as CallbackClient (Webhook)
+The `.env` file contains the following environment variables:
 
-    Client->>API: POST /api/v1/verify { path, callback_url }
-    API->>API: Validates Path
-    API->>Worker: Submit Job to InMemoryQueue
-    API-->>Client: 202 Accepted { verification_id, status: QUEUED }
-    
-    Worker->>Worker: Pop Job from Queue
-    Worker->>Broker: request acquire()
-    
-    rect rgb(0, 0, 0, 0.1)
-    note right of Worker: Micro-Thread Locks Token
-    Broker-->>Worker: Provide SonarInstance (e.g. Node:9002)
-    Worker->>SQ: subprocess.run(sonar-scanner)
-    SQ-->>Worker: Code Analyzed, Engine Processing
-    Worker->>Worker: Sleep / Await Webhook Event
-    end
-
-    SQ->>API: Background Webhook triggers POST /api/v1/webhook
-    API->>Worker: Fire asyncio.Event (Wake Up)
-    Worker->>SQ: HTTP GET /api/issues/search
-    SQ-->>Worker: Download JSON Bugs/Vulnerabilities
-    Worker->>Callback: HTTP POST {callback_url} with JSON Data
-    Callback-->>Worker: 200 OK
-    Worker->>Broker: release() (Return Node:9002 to Pool)
-```
-
----
-
-## 2. How to Run
-
-### **Step 1: Install Dependencies**
-Ensure you have Python 3.11+ installed.
-```bash
-pip install -r requirements.txt
-```
-
-### **Step 2: Generate the Cluster**
-Use the custom script to mathematically construct your cluster size. Note: this will perfectly rewrite your `docker-compose.yml` and explicitly wire your `.env` placeholders!
-```bash
-python scripts/generate_cluster.py --nodes 2
-```
-
-### **Step 3: Boot the Docker Engines**
-```bash
-docker-compose up -d --remove-orphans
-```
-
-### **Step 4: Configure SonarQube (Webhooks & Tokens)**
-1. Open your browser to `http://localhost:9001` (and `9002`). Log in with `admin` / `admin`.
-2. **Create Webhook**: `Administration > Configuration > Webhooks`
-   - Name: `VS_Webhook`
-   - URL: `http://host.docker.internal:8000/api/v1/sonarqube/webhook`
-   - Secret: `my_webhook_secret`
-3. **Generate Token**: `My Account > Security`. Set type to `User Token` and copy it.
-
-### **Step 5: Bind the Architecture**
-Open your `.env` file and overwrite the `SONAR_INSTANCES` JSON map with the tokens you just generated to strictly bind the python backend to the containers:
-```json
-SONAR_INSTANCES={"http://localhost:9001": "squ_tokenYourToken1", "http://localhost:9002": "squ_tokenYourToken2"}
-```
-
-### **Step 6: Launch the FastAPI Service**
-```bash
-uvicorn app.main:app --reload
-```
-You can now aggressively drop jobs via Postman to `POST http://localhost:8000/api/v1/verify`!
-
----
-
-## 3. Code Documentation
-
-The codebase is strictly layered using Domain-Driven Design principles.
-
-### **`app/api/`** (Controllers)
-- **`verification_controller.py`**: Intercepts `POST` traffic, parses JSON, and injects it into the global service.
-- **`webhook_controller.py`**: Intercepts incoming backend signals from SonarQube explicitly to securely wake up sleeping worker threads.
-
-### **`app/infrastructure/`** (State & Concurrency)
-- **`concurrency_manager.py`**: The genius load balancer. It mathematically limits the physical `sonar-scanner` Subprocesses to exactly match the available Docker UI nodes available in `.env`.
-- **`job_queue.py`**: The native `asyncio.Queue` pipe. Bridges the gap between the traffic-facing FastAPI logic and the invisible sleeper-bot background processor.
-- **`job_store.py`**: Synchronous global dictionary retaining Job Models in memory so `GET /verify/{id}` can view status updates across millions of cycles.
-
-### **`app/services/`** (Orchestration)
-- **`verification_worker.py`**: The core loop. Generates asynchronous micro-threads (`asyncio.Task`) to concurrently blast through multiple target paths simultaneously without blocking user web traffic.
-- **`scan_executor.py`**: Governs the strict timeline of a specific micro-thread (Start, Await Webhook, Download Results, Send Callback).
-- **`result_builder.py`**: Re-maps ugly internal SonarQube REST JSON metrics into gorgeous, cleanly-delineated python models.
-  
-### **`app/integrations/`** (External Boundaries)
-- **`sonar_scanner_client.py`**: Handles extremely dangerous `.bat` Subprocess execution securely wrapping the commands in `asyncio.to_thread` bypassing event loop restrictions. Also injects dynamic `-Dsonar.java.binaries=.` bypass flags.
-- **`sonar_result_fetcher.py`**: Rapidly crawls down into SonarQube's internal backend via HTTPX to retrieve specific line numbers, types, and text strings associated with code bugs.
-
-### **`scripts/`** (Automation)
-- **`generate_cluster.py`**: Fully constructs an N-Node horizontal scaling infrastructure. Natively rewrites `docker-compose.yml` and dynamically injects the `SONAR_INSTANCES` dictionary directly into `.env`.
+| Variable | Description | Example Value |
+| --- | --- | --- |
+| `DATABASE_URL` | The connection string for the MySQL database. | `mysql://root:root@localhost:3306/visual_app_design` |
+| `KEYCLOAK_URL` | The URL of the Keycloak server. | `http://localhost:4000` |
+| `REALM` | The Keycloak realm to use for authentication. | `myRealm` |
+| `CLIENT_ID` | The Keycloak client ID to use for authentication. | `myClient` |
+| `CLIENT_SECRET` | The Keycloak client secret to use for authentication. | `TkzLVEIWoZ6uqTwWZEVx4Q7KEO6Mn1BR` |
+| `REDIRECT_URI` | The redirect URI to use for Keycloak authentication. | `http://localhost:8000/auth/callback` |
+| `FRONTEND_PORT` | The port that the front-end application is running on. | `3000` |
+| `FRONTEND_URL` | The URL of the front-end application. | `http://localhost:3000` |
+| `SERVER_HOSTNAME` | The hostname of the backend server. | `localhost` |
+| `SERVER_PORT` | The port that the backend server is running on. | `8000` |
+| `GENERATOR_URL` | The URL of the code generator service. | `http://localhost:8082` |
+| `TEST_AUTH_TOKEN` | A test authentication token for testing purposes. | `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4eUY1cW14ZXpleVo4WEpsU3NrRGQ1SEUyUmJ2eXl2ZHpndkVoVXB5ZTBFIn0...` |
+| `REACT_APP_API_PROTOCOL` | The protocol to use for the API. | `http` |
+| `REACT_APP_API_HOSTNAME` | The hostname of the API. | `localhost` |
+| `REACT_APP_API_PORT` | The port of the API. | `8000` |
+| `REACT_APP_API_VERSION` | The version of the API. | `v1` |

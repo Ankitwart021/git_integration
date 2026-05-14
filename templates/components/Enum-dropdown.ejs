@@ -1,0 +1,19 @@
+<select
+  className="form-select"
+  name="<%= fieldMeta.name %>"
+  required={<%= !!fieldMeta.required %>}
+  value={dataToSave["<%= fieldMeta.name %>"] || ""}
+  id="<%= inputId %>"
+  onChange={(e) =>
+    setDataToSave({ ...dataToSave, ["<%= fieldMeta.name %>"]: e.target.value })
+  }
+>
+  <option value="">Select <%= fieldMeta.name %></option>
+
+  {Object.keys(enums).length !== 0 &&
+    enums["<%= enumKey %>"] !== undefined &&
+    enums["<%= enumKey %>"]?.map((val:any, idx:any) => (
+      <option key={idx} value={val}>{val}</option>
+    ))
+  }
+</select>

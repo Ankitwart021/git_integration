@@ -1,0 +1,29 @@
+import { useEffect, useState } from 'react';
+import <%=componentName%>Model from '../models/<%=componentName%>Model';
+
+const use<%=componentName%>Hook = () => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data1 = await fetch('<%=apiName%>', {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(response => response.json())
+
+      const modelInstances = data1.map((item: any) => new <%=componentName%>Model(item));
+      setData(modelInstances);
+    }
+    
+    fetchData();
+  }, []);
+  
+  return {
+    data,
+  }
+};
+
+export default use<%=componentName%>Hook;

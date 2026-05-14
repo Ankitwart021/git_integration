@@ -1,0 +1,11 @@
+<select
+  className="form-select"
+  name="<%= fieldMeta.name %>"
+  required={<%= !!fieldMeta.required %>}
+  value={editedRecord["<%= fieldMeta.name %>"] || ""}
+  onChange={(e) => handleEdit(id, "<%= fieldMeta.name %>", e.target.value)}
+>
+  <option value="">Select <%= fieldMeta.name %></option>
+  <option value="true">Yes</option>
+  <option value="false">No</option>
+</select>

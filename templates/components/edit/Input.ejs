@@ -1,0 +1,8 @@
+<input
+  type="<%= inputType %>"
+  className="form-control"
+  name="<%= fieldMeta.name %>"
+  required={<%= !!fieldMeta.required %>}
+  value={editedRecord["<%= fieldMeta.name %>"] || ""}
+  onChange={(e) => handleEdit(id, "<%= fieldMeta.name %>", e.target.value)}
+/>

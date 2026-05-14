@@ -1,0 +1,13 @@
+<input
+  className="form-control"
+  type="file"
+  name="<%= fieldMeta.name %>"
+  required={<%= !!fieldMeta.required %>}
+  id="<%= inputId %>"
+  onChange={(e) =>
+    setDataToSave({
+      ...dataToSave,
+      ["<%= fieldMeta.name %>"]: e.target.files?.[0] || null
+    })
+  }
+/>

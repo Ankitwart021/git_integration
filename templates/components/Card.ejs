@@ -1,0 +1,19 @@
+import React from 'react';
+              import "<%=cssImportPath%>";
+
+              interface <%=cardName%>Props {
+                product: any;
+              }
+
+              const <%=cardName%>: React.FC<<%=cardName%>Props> = ({ product }) => {
+                return (
+                  <div>
+                    <%cardHtml%>
+
+                  </div>
+                  
+
+                );
+              }
+
+              export default <%=cardName%>;

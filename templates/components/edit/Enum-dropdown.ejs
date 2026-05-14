@@ -1,0 +1,15 @@
+<select
+  className="form-select"
+  name="<%= fieldMeta.name %>"
+  required={<%= !!fieldMeta.required %>}
+  value={editedRecord["<%= fieldMeta.name %>"] || ""}
+  onChange={(e) => handleEdit(id, "<%= fieldMeta.name %>", e.target.value)}
+>
+  <option value="">Select <%= fieldMeta.name %></option>
+
+  {enums?.["<%= enumKey %>"]?.map((val:any, idx:any) => (
+    <option key={idx} value={val}>
+      {val}
+    </option>
+  ))}
+</select>

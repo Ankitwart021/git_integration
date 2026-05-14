@@ -1,0 +1,18 @@
+<select
+  className="form-select"
+  name="<%= fieldMeta.name %>"
+  required={<%= !!fieldMeta.required %>}
+  value={dataToSave["<%= fieldMeta.name %>"] || ""}
+  id="<%= inputId %>"
+  onChange={(e) => {
+    const val = e.target.value;
+    setDataToSave({
+      ...dataToSave,
+      [e.target.name]: val === "true" ? true : val === "false" ? false : ""
+    });
+  }}
+>
+  <option value="">Select <%= fieldMeta.name %></option>
+  <option value="true">Yes</option>
+  <option value="false">No</option>
+</select>

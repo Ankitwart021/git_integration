@@ -1,0 +1,12 @@
+<input
+  type="<%=inputType%>"
+  className="form-control"
+  name="<%= fieldMeta.name %>"
+  required={<%= fieldMeta.required ? "true" : "false" %>}
+  value={dataToSave["<%= fieldMeta.name %>"] || ""}
+  id="<%= id %>"
+  placeholder="<%= placeholder %>"
+  onChange={(e) =>
+    setDataToSave({ ...dataToSave, ["<%= fieldMeta.name %>"]: e.target.value })
+  }
+/>

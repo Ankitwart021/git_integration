@@ -1,0 +1,169 @@
+import React, { useEffect, useState } from "react";
+import apiConfig from "../config/apiConfig";
+import { useNavigate } from "react-router";
+import {
+  AllCommunityModule,
+  ModuleRegistry,
+} from "ag-grid-community";
+import { AgGridReact } from "ag-grid-react";
+import { useQuery } from "@tanstack/react-query";
+
+// Model
+import <%= apiName %>Model from "../models/<%= apiName %>Model";
+
+ModuleRegistry.registerModules([AllCommunityModule]);
+
+export type ResourceMetaData = {
+  resource: string;
+  fieldValues: any[];
+};
+
+const getCookie = (name: string): string | null => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(";").shift() || null;
+  return null;
+};
+
+const <%= collectionComponentName %> = () => {
+  const navigate = useNavigate();
+  const [rowData, setRowData] = useState<any[]>([]);
+  const [columnDefs, setColumnDefs] = useState<any[]>([]);
+  const [fetchData, setFetchedData] = useState<any[]>([]);
+  const [requiredFields, setRequiredFields] = useState<string[]>([]);
+
+  const regex = /^(g_|archived|extra_data)/;
+
+  /* ---------------- Fetch Resource Data ---------------- */
+  useQuery({
+    queryKey: ["resourceData", "<%= apiName.toLowerCase() %>"],
+    queryFn: async () => {
+      const params = new URLSearchParams();
+      params.append("queryId", "GET_ALL");
+
+      const accessToken = getCookie("access_token");
+      if (!accessToken) throw new Error("Access token not found");
+
+      const response = await fetch(
+        `${apiConfig.getResourceUrl("<%= apiName.toLowerCase() %>")}?${params}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          credentials: "include",
+        }
+      );
+
+      if (!response.ok) throw new Error("Failed to fetch data");
+
+      const data = await response.json();
+      setFetchedData(data.resource || []);
+      return data;
+    },
+  });
+
+  /* ---------------- Fetch Metadata ---------------- */
+  useQuery({
+    queryKey: ["resourceMetaData", "<%= apiName.toLowerCase() %>"],
+    queryFn: async () => {
+      const response = await fetch(
+        apiConfig.getResourceMetaDataUrl("<%= apiName.toLowerCase() %>"),
+        { method: "GET" }
+      );
+
+      if (!response.ok) throw new Error("Failed to fetch metadata");
+
+      const data = await response.json();
+      const fields =
+        data?.[0]?.fieldValues
+          ?.filter((f: any) => !regex.test(f.name))
+          ?.map((f: any) => f.name) || [];
+
+      setRequiredFields(fields);
+      return data;
+    },
+  });
+
+  /* ---------------- Prepare Row Data ---------------- */
+   useEffect(() => {
+    if (!fetchData.length) return;
+
+    const models = fetchData.map((obj: any) =>
+      <%= apiName %>Model.fromJson(obj)
+    );
+
+    const json = models.map((m: any) => m.toJson());
+    setRowData(json);
+  }, [fetchData]);
+/* ---------------- Prepare Columns ---------------- */
+useEffect(() => {
+  if (!requiredFields.length) return;
+
+  const cols:any[] = requiredFields
+    .filter((f) => f !== "id")
+    .map((field) => ({
+      field,
+      headerName: field,
+      sortable: true,
+      filter: true,
+      resizable: true,
+      editable: false,
+    }));
+
+  cols.push({
+    headerName: "Actions",
+    field: "__actions",
+    width: 120,
+    editable: false,
+    cellRenderer: (params: any) => {
+      return (
+        <div className="d-flex gap-2 p-1 align-items-center">
+          {/* Edit */}
+          <i
+            className="fa fa-edit text-primary cursor-pointer"
+            title="Edit"
+            onClick={() => {
+              console.log("Edit clicked:", params.data);
+              handleUpdate(params.data.id);
+            }}
+          />
+
+          {/* Delete */}
+          <i
+            className="fa fa-trash text-danger cursor-pointer"
+            title="Delete"
+            onClick={() => {
+              console.log("Delete clicked:", params.data);
+              // 🔜 later: call delete API
+            }}
+          />
+        </div>
+      );
+    },
+  });
+
+  setColumnDefs(cols); // ✅ REQUIRED
+}, [requiredFields]);
+
+  /* ---------------- Navigate to edit  ---------------- */
+  const handleUpdate = async (id: any) => {
+    navigate(`/edit/<%= resourceName.toLowerCase() %>/${id}`);
+  };
+
+  return (
+    <div className="ag-theme-alpine" style={{ height: 500, width: "100%" }}>
+      <AgGridReact
+        rowData={rowData}
+        columnDefs={columnDefs}
+        pagination
+        paginationPageSize={10}
+        animateRows
+        rowSelection="multiple"
+      />
+    </div>
+  );
+};
+
+export default <%= collectionComponentName %>;

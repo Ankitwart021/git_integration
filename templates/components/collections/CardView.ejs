@@ -1,0 +1,121 @@
+import React, { useEffect, useState } from "react";
+import apiConfig from "../config/apiConfig";
+import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+
+import {
+  CARD_ATTR_DESC,
+  CARD_ATTR_META,
+  CARD_ATTR_TITLE,
+} from "../constants";
+
+// Model
+import <%= apiName %>Model from "../models/<%= apiName %>Model";
+
+const getCookie = (name: string): string | null => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(";").shift() || null;
+  return null;
+};
+
+const <%= collectionComponentName %> = () => {
+  const navigate = useNavigate();
+  const [data, setData] = useState<Record<string, any>[]>([]);
+  const attrMapArray = JSON.parse(<%- JSON.stringify(attrMap) %>);
+  const attrMap = new Map<string, string>(attrMapArray);
+
+  /* ---------------- Fetch Data ---------------- */
+  const { data: rawData } = useQuery({
+    queryKey: ["resourceData", "<%= apiName.toLowerCase() %>"],
+    queryFn: async () => {
+      const params = new URLSearchParams();
+      params.append("queryId", "GET_ALL");
+
+      const accessToken = getCookie("access_token");
+      if (!accessToken) throw new Error("Access token not found");
+
+      const response = await fetch(
+        `${apiConfig.getResourceUrl("<%= apiName.toLowerCase() %>")}?${params}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          credentials: "include",
+        }
+      );
+
+      if (!response.ok) throw new Error("Failed to fetch data");
+
+      const json = await response.json();
+      return json.resource || [];
+    },
+  });
+
+  /* ---------------- Transform Data (v5-safe) ---------------- */
+  useEffect(() => {
+    if (!rawData) return;
+
+    const models = rawData.map((r: any) =>
+      <%= apiName %>Model.fromJson(r)
+    );
+
+    setData(models.map((m: any) => m.toJson()));
+  }, [rawData]);
+
+  /* ---------------- Navigate to edit ---------------- */
+  const handleUpdate = (id: any) => {
+    navigate(`/edit/<%= resourceName.toLowerCase() %>/${id}`);
+  };
+
+  const getValue = (item: any, key?: string) =>
+    key ? String(item[key] ?? "") : "";
+
+  return (
+    <div className="custom-view-card-container d-flex flex-wrap gap-3 p-3">
+      {data.map((item, index) => (
+        <div key={index} className="card position-relative" style={{ width: "18rem" }}>
+          <div className="card-body">
+            <small className="text-muted">
+              {getValue(item, attrMap.get(CARD_ATTR_META))}
+            </small>
+
+            <h5 className="card-title">
+              {getValue(item, attrMap.get(CARD_ATTR_TITLE))}
+            </h5>
+
+            <p className="card-text">
+              {getValue(item, attrMap.get(CARD_ATTR_DESC))}
+            </p>
+
+            {/* -------- Actions -------- */}
+            <div
+              className="position-absolute d-flex gap-2"
+              style={{ top: "10px", right: "10px", zIndex: 2 }}
+            >
+              {/* Edit */}
+              <i
+                className="fa fa-edit text-primary cursor-pointer"
+                title="Edit"
+                onClick={() => handleUpdate(item.id)}
+              />
+
+              {/* Delete */}
+              <i
+                className="fa fa-trash text-danger cursor-pointer"
+                title="Delete"
+                onClick={() => {
+                  console.log("Delete card clicked:", item);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default <%= collectionComponentName %>;

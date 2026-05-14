@@ -1,0 +1,241 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Application {
+  id          String   @id @default(uuid()) @map("APPLICATION_ID")
+  name        String   @map("NAME")
+  description String?  @map("DESCRIPTION") @db.Text
+  createdAt   DateTime @default(now()) @map("CREATED_AT")
+
+   // Collaboration metadata
+  isShared     Boolean   @default(false) @map("IS_SHARED")
+  remoteAppId  String?   @map("REMOTE_APP_ID")
+  baseVersion  Int       @default(0) @map("BASE_VERSION")
+  lastSyncedAt DateTime? @map("LAST_SYNCED_AT")
+
+  pages                 Page[]
+  resources             Resource[]
+  enums                 ApplicationEnum[]
+  users                 UserApplicationMap[]
+  applicationDecorators ApplicationDecorator[]
+  workflows             Workflow[]
+  workflowStateData     WorkflowStateData[]
+
+  @@map("APPLICATION")
+}
+
+model User {
+  id        String   @id @default(uuid()) @map("USER_ID")
+  username  String   @map("USERNAME")
+  email     String   @unique @map("EMAIL")
+  createdAt DateTime @default(now()) @map("CREATED_AT")
+
+  applications     UserApplicationMap[]
+  templates        Template[]
+  customComponents CustomComponent[]
+
+  @@map("USERS")
+}
+
+model UserApplicationMap {
+  userId        String
+  applicationID String
+  createdAt     DateTime @default(now()) @map("CREATED_AT")
+
+  user        User        @relation(fields: [userId], references: [id])
+  application Application @relation(fields: [applicationID], references: [id], onDelete: Cascade)
+
+  @@id([userId, applicationID])
+  @@map("USER_APPLICATION_MAP")
+}
+
+model Page {
+  id            String   @id @default(uuid()) @map("PAGE_ID")
+  applicationID String   @map("APPLICATION_ID")
+  pageName      String   @map("PAGE_NAME")
+  pageContent   Json     @map("PAGE_CONTENT")
+  createdAt     DateTime @default(now()) @map("CREATED_AT")
+
+   // Collaboration metadata
+  localHash     String?  @map("LOCAL_HASH")
+  serverHash    String?  @map("SERVER_HASH")
+  syncVersion   Int      @default(0) @map("SYNC_VERSION")
+  lastSyncedAt  DateTime? @map("LAST_SYNCED_AT")
+
+  application Application @relation(fields: [applicationID], references: [id], onDelete: Cascade)
+
+  @@map("PAGE")
+}
+
+model Resource {
+  id            String   @id @default(uuid()) @map("RESOURCE_ID")
+  applicationID String   @map("APPLICATION_ID")
+  resourceName  String   @map("RESOURCE_NAME")
+  attributes    Json     @map("RESOURCES") // Renamed from RESOURCES to ATTRIBUTES
+  createdAt     DateTime @default(now()) @map("CREATED_AT")
+
+    // Collaboration
+  localHash     String?  @map("LOCAL_HASH")
+  serverHash    String?  @map("SERVER_HASH")
+  syncVersion   Int      @default(0) @map("SYNC_VERSION")
+  lastSyncedAt  DateTime? @map("LAST_SYNCED_AT")
+
+  application Application @relation(fields: [applicationID], references: [id], onDelete: Cascade)
+
+  @@map("RESOURCE")
+}
+
+model ApplicationEnum {
+  id            String   @id @default(uuid()) @map("ENUM_ID")
+  applicationID String   @map("APPLICATION_ID")
+  enumName      String   @map("ENUM_NAME")
+  createdAt     DateTime @default(now()) @map("CREATED_AT")
+  enums         Json
+
+
+  // Collaboration
+  localHash     String?  @map("LOCAL_HASH")
+  serverHash    String?  @map("SERVER_HASH")
+  syncVersion   Int      @default(0) @map("SYNC_VERSION")
+  lastSyncedAt  DateTime? @map("LAST_SYNCED_AT")
+
+  application Application @relation(fields: [applicationID], references: [id], onDelete: Cascade)
+
+  @@map("ENUM")
+}
+
+model ApplicationDecorator {
+  id                  String   @id @default(uuid()) @map("DECORATOR_ID")
+  applicationID       String   @map("APPLICATION_ID")
+  decoratorName       String   @map("DECORATOR_NAME")
+  decoratorattributes Json     @map("DECORATOR_ATTRIBUTES")
+  createdAt           DateTime @default(now()) @map("CREATED_AT")
+
+  application Application @relation(fields: [applicationID], references: [id], onDelete: Cascade)
+
+  @@map("APPLICATION_DECORATOR")
+}
+
+model Template {
+  id           String   @id @default(uuid()) @map("TEMPLATES_ID")
+  userId       String?  @map("USER_ID")
+  templateName String   @map("TEMPLATE_NAME")
+  description  String?  @map("DESCRIPTION") @db.Text
+  createdAt    DateTime @default(now()) @map("CREATED_AT")
+
+  user              User?              @relation(fields: [userId], references: [id])
+  templatePages     TemplatePage[]
+  templateResources TemplateResource[]
+  templateEnums     TemplateEnum[]
+
+  @@map("TEMPLATES")
+}
+
+model TemplatePage {
+  id         String   @id @default(uuid()) @map("TEMPLATE_PAGE_ID")
+  templateId String   @map("TEMPLATE_ID")
+  tpName     String   @map("TP_NAME")
+  tpContent  Json     @map("TP_CONTENT")
+  createdAt  DateTime @default(now()) @map("CREATED_AT")
+
+  template Template @relation(fields: [templateId], references: [id])
+
+  @@map("TEMPLATE_PAGES")
+}
+
+model CustomComponent {
+  id               String   @id @default(uuid()) @map("CUSTOM_COMPONENT_ID")
+  userId           String   @map("USER_ID")
+  componentName    String   @map("COMPONENT_NAME")
+  componentContent Json     @map("COMPONENT_CONTENT")
+  createdAt        DateTime @default(now()) @map("CREATED_AT")
+
+    // Collaboration
+  localHash     String?  @map("LOCAL_HASH")
+  serverHash    String?  @map("SERVER_HASH")
+  syncVersion   Int      @default(0) @map("SYNC_VERSION")
+  lastSyncedAt  DateTime? @map("LAST_SYNCED_AT")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("CUSTOM_COMPONENT")
+}
+
+model TemplateResource {
+  id           String   @id @default(uuid()) @map("TEMPLATE_RESOURCE_ID")
+  templateId   String?  @map("TEMPLATE_ID")
+  resourceName String   @map("RESOURCE_NAME")
+  resources    Json     @map("RESOURCES")
+  createdAt    DateTime @default(now()) @map("CREATED_AT")
+
+  template Template? @relation(fields: [templateId], references: [id])
+
+  @@map("TEMPLATE_RESOURCES")
+}
+
+model TemplateEnum {
+  id         String   @id @default(uuid()) @map("ENUM_ID")
+  templateId String?  @map("TEMPLATE_ID")
+  enumName   String   @map("ENUM_NAME")
+  createdAt  DateTime @default(now()) @map("CREATED_AT")
+  enums      Json
+
+  template Template? @relation(fields: [templateId], references: [id])
+
+  @@map("TEMPLATE_ENUMS")
+}
+
+model Workflow {
+  id                   String   @id @default(uuid()) @map("WORKFLOW_ID")
+  applicationID        String   @map("APPLICATION_ID")
+  workflowName         String   @map("WORKFLOW_NAME")
+  workflowData         Json     @map("WORKFLOW_DATA")
+  createdAt            DateTime @default(now()) @map("CREATED_AT")
+  generatedWorkflowIds Json     @map("GENERATED_WORKFLOW_IDS")
+
+   // Collaboration
+  localHash     String?  @map("LOCAL_HASH")
+  serverHash    String?  @map("SERVER_HASH")
+  syncVersion   Int      @default(0) @map("SYNC_VERSION")
+  lastSyncedAt  DateTime? @map("LAST_SYNCED_AT")
+
+  application       Application         @relation(fields: [applicationID], references: [id], onDelete: Cascade)
+  workflowStateData WorkflowStateData[]
+
+  @@map("WORKFLOW")
+}
+
+model WorkflowStateData {
+  id            String @id @default(uuid()) @map("WORKFLOW_STATE_DATA_ID")
+  applicationID String @map("APPLICATION_ID")
+  workflowID    String @map("WORKFLOW_ID")
+
+  nodes     Json     @map("NODES") // stores Node[]
+  edges     Json     @map("EDGES") // stores Edge[]
+  createdAt DateTime @default(now()) @map("CREATED_AT")
+
+  application Application @relation(fields: [applicationID], references: [id], onDelete: Cascade)
+  workflow    Workflow    @relation(fields: [workflowID], references: [id], onDelete: Cascade)
+
+  @@map("WORKFLOW_STATE_DATA")
+}
+
+model SyncQueue {
+  id            String   @id @default(uuid()) @map("SYNC_QUEUE_ID")
+  applicationId String   @map("APPLICATION_ID")
+  unitType      String   @map("UNIT_TYPE")
+  unitId        String   @map("UNIT_ID")
+  operation     String   @map("OPERATION")
+  status        String   @default("PENDING") @map("STATUS")
+  createdAt     DateTime @default(now()) @map("CREATED_AT")
+  updatedAt     DateTime @updatedAt @map("UPDATED_AT")
+
+  @@index([applicationId, unitType, unitId, status])
+  @@map("SYNC_QUEUE")
+}

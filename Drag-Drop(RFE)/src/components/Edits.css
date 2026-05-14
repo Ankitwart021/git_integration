@@ -1,0 +1,136 @@
+.color-picker-input {
+  width: 100px;
+  /* Adjust width as needed */
+  height: 40px;
+  /* Adjust height as needed */
+  padding: 0.2rem;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+}
+
+/* css for image design section */
+.style-buttons .icon-btn {
+  width: 42px;
+  height: 42px;
+  background: #1d1d1d;
+  border: 1px solid #2f2f2f;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: border-color 0.2s ease;
+}
+
+.style-buttons .icon-btn:hover {
+  border-color: #00ffc8;
+}
+
+.style-buttons svg {
+  pointer-events: none;
+}
+
+.aspect-icons .icon-btn:hover {
+  border-color: #00ffc8;
+}
+
+.icon-btn svg {
+  stroke: #fff;
+}
+
+/* Tooltip (CSS-only) */
+.aspect-icons .icon-btn::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000000e6;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 10px;
+  white-space: nowrap;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.aspect-icons .icon-btn:hover::after {
+  opacity: 1;
+}
+
+.aspect-icons .icon-btn::before {
+  content: "";
+  position: absolute;
+  bottom: 108%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #000000e6 transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.aspect-icons .icon-btn:hover::before {
+  opacity: 1;
+}
+
+.aspect-icons .icon-btn {
+  width: 42px;
+  height: 42px;
+  background: #1d1d1d;
+  border: 1px solid #2f2f2f;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  /* FORCE single row */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.align-buttons .icon-btn {
+  width: 42px;
+  height: 42px;
+  background: #1d1d1d;
+  border: 1px solid #2f2f2f;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: border-color 0.2s ease;
+}
+
+.align-buttons .icon-btn:hover {
+  border-color: #00ffc8;
+}
+
+.align-buttons svg {
+  pointer-events: none;
+  /* prevents click issues */
+}
+
+.small-btn {
+  font-size: 11px !important;
+  padding: 5px 12px !important;
+}
+
+.btn-dark {
+  background: #1d1d1d !important;
+  border-color: #2f2f2f !important;
+}
+
+.btn-dark:hover {
+  border-color: #00ffc8 !important;
+}

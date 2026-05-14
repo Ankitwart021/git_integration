@@ -1,0 +1,31 @@
+/* Full screen dark background */
+.edit-page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.75); /* dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* above everything */
+}
+
+/* Centered white card */
+.edit-page-container {
+  background: #ffffff;
+  width: 70%;
+  max-width: 1000px;
+  max-height: 80vh;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+}
+
+/* Optional: make it feel exactly like screenshot */
+.edit-page-container h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}

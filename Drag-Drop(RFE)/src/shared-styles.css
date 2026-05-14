@@ -1,0 +1,38 @@
+/* Shared Styles for RASP Designer */
+:root {
+  --dash-bg: #0e1218;
+  --dash-surface: #161c24;
+  --dash-surface-alt: #1f2631;
+  --dash-accent: #6366f1;
+  --dash-accent-hover: #7a7df7;
+  /* --dash-accent-gradient: #8b5cf6; */
+  --dash-accent-gradient: linear-gradient(135deg,#6366f1,#8b5cf6 55%,#d946ef);
+  --dash-text: #f1f5f9;
+  --dash-text-dim: #9aa7b9;
+  --dash-border: #2a3240;
+  --dash-border-strong: #3a4656;
+  --dash-danger: #ef4444;
+  --dash-success: #10b981;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 2px 4px -2px rgba(0,0,0,.35),0 4px 10px -2px rgba(0,0,0,.25);
+  --shadow-md: 0 6px 14px -4px rgba(0,0,0,.55),0 10px 32px -6px rgba(0,0,0,.4);
+  --ring-focus: 0 0 0 2px rgba(99,102,241,.4);
+  --trans: 150ms cubic-bezier(.4,0,.2,1);
+  --font-stack: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.dashboard-root {
+  font-family: var(--font-stack);
+  background: radial-gradient(circle at 18% 22%, #1c2430, #0e1218 72%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar styling */
+.dashboard-root ::-webkit-scrollbar { width: 10px; }
+.dashboard-root ::-webkit-scrollbar-track { background: #12161c; }
+.dashboard-root ::-webkit-scrollbar-thumb { background: #2c3440; border-radius: 20px; }
+.dashboard-root ::-webkit-scrollbar-thumb:hover { background: #394454; }

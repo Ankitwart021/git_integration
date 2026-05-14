@@ -1,0 +1,6 @@
+projectKey=vs-verify-ccd38419-1555-4121-86a6-b67b98fc960b
+serverUrl=http://localhost:9001
+serverVersion=26.3.0.120487
+dashboardUrl=http://localhost:9001/dashboard?id=vs-verify-ccd38419-1555-4121-86a6-b67b98fc960b
+ceTaskId=e5947e98-2328-43dd-86ab-f398e64fff04
+ceTaskUrl=http://localhost:9001/api/ce/task?id=e5947e98-2328-43dd-86ab-f398e64fff04

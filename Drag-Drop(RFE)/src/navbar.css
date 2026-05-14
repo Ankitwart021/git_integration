@@ -1,0 +1,313 @@
+#appBtn:hover,#pageBtn:hover {
+    /* background-color: rgb(102, 86, 66); */
+    border-bottom:2px solid #f34843;
+    
+}
+
+
+
+
+#firstNav .dashboard-nav__brand:after { content: none !important; display: none !important; }
+#saveBtn{
+    background-color: rgb(68, 68, 68);
+}
+
+ #firstNav{
+    /* background-color: #3755BE; */
+    /* background-color: #8BC659; */
+    background-color: black;
+    /* background-image: linear-gradient(to right , #8BC659,#D7F8FD); */
+    /* background-image: linear-gradient(to right , #9fc77c,rgb(176, 248, 230)); */
+}
+#secondNav{
+    background-color: rgb(66, 63, 63);
+    /* background-image: linear-gradient(to right , #9fc77c,rgb(82, 104, 98)); */
+    padding-top: 8px !important;   /* more breathing room so text doesn't touch border */
+    padding-bottom: 8px !important;
+    min-height: 52px; /* consistent baseline with comfortable height */
+    display: flex;
+    align-items: center;
+}
+#secondNav .nav-underline .nav-link,
+#secondNav .nav-underline .nav-link:hover,
+#secondNav .nav-underline .nav-link:focus,
+#secondNav .nav-underline .nav-link.active { 
+    border-bottom: none !important; /* remove the underline */
+}
+#secondNav .nav-link.active { 
+    color: #8b5cf6 !important; /* keep accent color for active */
+}
+#secondNav .nav-link { 
+    color: #e7eaf1 !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    padding: 6px 10px;
+}
+#appName{
+    color: #ffffff;
+}
+
+/* App name typography improvements */
+#secondNav .app-name { 
+    display: inline-flex; 
+    align-items: baseline; 
+    gap: 0; /* spacing controlled by the colon only for consistency */
+    line-height: 1.2; /* reduce perceived crowding */
+    margin-left: 16px; /* add left margin as requested */
+    font-kerning: normal;
+}
+#secondNav .app-name-label { 
+    color: #9aa7b9; 
+    font-size: 0.92rem; /* slightly smaller so it doesn't dominate */
+    font-weight: 600; 
+    letter-spacing: .01em; /* reduce extra spacing to avoid awkward gap */
+    text-transform: uppercase;
+}
+#secondNav .app-name-sep { color: #7a8393; font-weight: 600; margin: 0 6px; /* precise symmetric spacing around colon */ }
+#secondNav .app-name-value { 
+    color: #ffffff; 
+    font-size: 1.05rem; /* crisper value without feeling cramped */
+    font-weight: 700; 
+    letter-spacing: .01em; 
+}
+
+/* Tighten the page selector pill: less round, slightly larger text for readability */
+.pill-select { 
+    border-radius: 10px !important; 
+    padding: 6px 10px !important; 
+    font-size: 0.95rem !important; 
+}
+
+#signoutBtn{
+    background-color: #f34843;
+    /* background-color: #e0554b; */
+}
+
+/* Make generate button less rounded to match request */
+.generate-btn { border-radius: 10px !important; }
+
+/* System Action Buttons (Sync & Rollback) */
+.system-actions-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 4px 10px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-left: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.system-actions-wrapper:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.system-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: transparent;
+  color: #e2e8f0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.system-btn:hover {
+  transform: scale(1.15) translateY(-2px);
+}
+
+.system-btn:active {
+  transform: scale(0.95);
+}
+
+.system-btn-sync {
+  color: #60a5fa !important;
+}
+
+.system-btn-sync:hover {
+  background: rgba(96, 165, 250, 0.15) !important;
+  color: #93c5fd !important;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.5);
+}
+
+.system-btn-rollback {
+  color: #fbbf24 !important;
+}
+
+.system-btn-rollback:hover {
+  background: rgba(251, 191, 36, 0.15) !important;
+  color: #fcd34d !important;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+.system-btn i {
+  font-size: 14px;
+}
+
+/* Sync animation when active/hover (optional visual flair) */
+.system-btn-sync:hover i {
+  animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+/* Premium Modals */
+.premium-modal .modal-content {
+  background: rgba(30, 34, 45, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  color: #f8fafc !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.premium-modal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 1.25rem 1.5rem !important;
+}
+
+.premium-modal .modal-title {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  color: #ffffff !important;
+}
+
+.premium-modal .modal-body {
+  padding: 1.5rem !important;
+}
+
+.premium-modal .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 1.25rem 1.5rem !important;
+}
+
+.premium-modal .text-muted {
+  color: #94a3b8 !important;
+}
+
+/* list-group items in premium modal */
+.premium-modal .list-group-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  margin-bottom: 8px !important;
+  color: #e2e8f0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.premium-modal .list-group-item:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+.premium-modal .list-group-item.active {
+  background: rgba(99, 102, 241, 0.15) !important;
+  border-color: #6366f1 !important;
+  color: #ffffff !important;
+}
+
+.active-version-item {
+  border-left: 4px solid #10b981 !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.current-badge {
+  background: #10b981;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Conflict items */
+.conflict-item {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px !important;
+}
+
+.conflict-unit-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.conflict-unit-type {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.conflict-unit-id {
+  font-weight: 600;
+  color: #f1f5f9;
+  font-size: 0.95rem;
+}
+
+/* Custom Buttons for Modals */
+.btn-premium-force {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-premium-force:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.45) !important;
+}
+
+.btn-premium-sync {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-premium-sync:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45) !important;
+}
+
+.premium-modal .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.8;
+}
+
+.premium-modal .btn-close:hover {
+  opacity: 1;
+}
